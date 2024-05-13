@@ -1,0 +1,10 @@
+name: GourLife
+version: '${project.version}'
+main: org.gourmet.gourlife.GourLife
+api-version: '1.19'
+depend: [PlaceholderAPI]
+author: Italian_Gourmet
+
+commands:
+  life:
+    usage: /life

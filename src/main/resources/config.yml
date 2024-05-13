@@ -1,0 +1,46 @@
+  ________  ___       ___  ________ _______
+# |\   ____\|\  \     |\  \|\  _____\\  ___ \
+# \ \  \___|\ \  \    \ \  \ \  \__/\ \   __/|
+#  \ \  \  __\ \  \    \ \  \ \   __\\ \  \_|/__
+#   \ \  \|\  \ \  \____\ \  \ \  \_| \ \  \_|\ \
+#    \ \_______\ \_______\ \__\ \__\   \ \_______\
+#     \|_______|\|_______|\|__|\|__|    \|_______|
+
+# Settings #
+rivelation: true
+timer_rivelation: 80 #in seconds
+Join-messages: true
+leave-messages: true
+death-message: true
+final-message: true
+life-number: 3
+
+# Messages #
+prefix: "&7[&FServerName&7]&8 » "
+no-player: "&cPlayer does not exist"
+reset-life: "&e%player% is back in the game"
+no-permission: "&cYou do not have the necessary permissions"
+check-lifes: "&c%player%'s lives are %lifes%"
+your-lifes: "&bYour lives are %lifes%"
+give-life: "&bYou have donated 1 life"
+recive-life: "&bYou have received 1 life from %player%"
+not-enough-lifes: "&cYou do not have enough lives"
+cant-find-player: "&cPlayer not found"
+cant-send-to-yourself: "&cYou cannot do this to yourself"
+rivelation_message: "%player% is at (%position_x%, %position_y%, %position_z%, %world%)"
+title_rivelation: "&cRevelation"
+subtitle_rivelation: "&c"
+death: "&e%player% has died, now has &c❤ %lifes%"
+final-death: "&e%player% has died completely"
+join: "&e%player% has joined!"
+leave: "&c%player% has left the server"
+gained-life: "&bYou have gained 1 life"
+set-life: "&bNew life; %new_life%"
+
+# Help #
+help-commands: "&c\n Usage: \n give: /life give <player> \n check: /life check <player>"
+
+
+
+# Players stats saving
+players-life:
