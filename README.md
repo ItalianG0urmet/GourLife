@@ -26,7 +26,7 @@ This Spigot plugin provides players with a unique gameplay experience by introdu
 ```yaml
 # Settings #
 rivelation: true
-timer_rivelation: 80 # in seconds
+timer_rivelation: 80 #in seconds
 Join-messages: true
 leave-messages: true
 death-message: true
@@ -57,6 +57,9 @@ set-life: "&bNew life; %new_life%"
 
 # Help #
 help-commands: "&c\n Usage: \n give: /life give <player> \n check: /life check <player>"
+
+# Players stats saving
+players-life:
 ```
 
 **Placeholders:**
