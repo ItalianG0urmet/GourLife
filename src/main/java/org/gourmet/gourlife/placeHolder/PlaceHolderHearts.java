@@ -4,10 +4,12 @@ import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.gourmet.gourlife.GourLife;
+import org.gourmet.gourlife.utils.Utils;
 
 public class PlaceHolderHearts extends PlaceholderExpansion {
 
-    FileConfiguration config = GourLife.getInstance().getConfig();
+    private FileConfiguration config = GourLife.getInstance().getConfig();
+    private int timer = GourLife.getInstance().getTimer();
 
     @Override
     public String getAuthor() {
@@ -43,7 +45,7 @@ public class PlaceHolderHearts extends PlaceholderExpansion {
         if(params.equalsIgnoreCase("lifes")) {
             if (config.contains("players-life." + player.getName())){
                 String viteString = "" + config.getString("players-life." + player.getName());
-                return GourLife.color("&c❤ " + viteString);
+                return Utils.color("&c❤ " + viteString);
             } else {
                 return ".";
             }
@@ -51,12 +53,12 @@ public class PlaceHolderHearts extends PlaceholderExpansion {
         }
 
         if (params.equalsIgnoreCase("revelation")) {
-            int minuti = GourLife.getInstance().timer / 60;
+            int minuti = timer / 60;
             if(minuti <= 0){
-                return GourLife.color("" + GourLife.getInstance().timer);
+                return Utils.color("" + timer);
             } else{
                 String minutiString = "" + minuti;
-                return GourLife.color(minutiString);
+                return Utils.color(minutiString);
             }
 
         } else {

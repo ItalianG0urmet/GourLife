@@ -11,8 +11,9 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
 import org.gourmet.gourlife.GourLife;
+import org.gourmet.gourlife.utils.Utils;
 
-public class OnDeath implements Listener {
+public class DeathEvent implements Listener {
 
     FileConfiguration config = GourLife.getInstance().getConfig();
 
@@ -25,9 +26,6 @@ public class OnDeath implements Listener {
         event.setDeathMessage(null);
 
         if (config.contains("players-life." + playerName)) {
-
-
-
             int lives = config.getInt("players-life." + playerName);
             if (lives > 1) {
                 // Decrementa il numero di vite del giocatore di 1
@@ -38,7 +36,7 @@ public class OnDeath implements Listener {
                 deathMessage = deathMessage.replace("%player%", playerName);
                 deathMessage = deathMessage.replace("%lifes%", "" + livesMinus);
                 if(config.getBoolean("death-message")){
-                    GourLife.sendAll(config.getString("prefix") + deathMessage);
+                    Utils.sendMessageAll(config.getString("prefix") + deathMessage);
                 }
                 GourLife.getInstance().saveConfig();
 
@@ -56,7 +54,7 @@ public class OnDeath implements Listener {
                 message = message.replace("%player%", playerName);
 
                 if(config.getBoolean("final-message")){
-                    GourLife.sendAll(config.getString("prefix") + message);
+                    Utils.sendMessageAll(config.getString("prefix") + message);
                 }
                 player.setGameMode(GameMode.SPECTATOR);
                 config.set("players-life." + playerName, 0);
