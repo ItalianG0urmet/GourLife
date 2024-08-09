@@ -1,21 +1,13 @@
-  ________  ___       ___  ________ _______
-# |\   ____\|\  \     |\  \|\  _____\\  ___ \
-# \ \  \___|\ \  \    \ \  \ \  \__/\ \   __/|
-#  \ \  \  __\ \  \    \ \  \ \   __\\ \  \_|/__
-#   \ \  \|\  \ \  \____\ \  \ \  \_| \ \  \_|\ \
-#    \ \_______\ \_______\ \__\ \__\   \ \_______\
-#     \|_______|\|_______|\|__|\|__|    \|_______|
-
-# Settings #
-rivelation: true
-timer_rivelation: 80 #in seconds
+# Settings
+revelation: true
+timer_revelation: 80 #in seconds
 Join-messages: true
 leave-messages: true
 death-message: true
 final-message: true
 life-number: 3
 
-# Messages #
+# Messages
 prefix: "&7[&FServerName&7]&8 » "
 no-player: "&cPlayer does not exist"
 reset-life: "&e%player% is back in the game"
@@ -37,10 +29,5 @@ leave: "&c%player% has left the server"
 gained-life: "&bYou have gained 1 life"
 set-life: "&bNew life; %new_life%"
 
-# Help #
+# Help
 help-commands: "&c\n Usage: \n give: /life give <player> \n check: /life check <player>"
-
-
-
-# Players stats saving
-players-life:

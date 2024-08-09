@@ -3,13 +3,15 @@ package org.gourmet.gourlife.placeHolder;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
 import org.gourmet.gourlife.GourLife;
+import org.gourmet.gourlife.utils.RevelationTask;
 import org.gourmet.gourlife.utils.Utils;
 
 public class PlaceHolderHearts extends PlaceholderExpansion {
 
     private FileConfiguration config = GourLife.getInstance().getConfig();
-    private int timer = GourLife.getInstance().getTimer();
+    int minutes;
 
     @Override
     public String getAuthor() {
@@ -42,24 +44,21 @@ public class PlaceHolderHearts extends PlaceholderExpansion {
             return "";
         }
 
-        if(params.equalsIgnoreCase("lifes")) {
-            if (config.contains("players-life." + player.getName())){
-                String viteString = "" + config.getString("players-life." + player.getName());
-                return Utils.color("&c❤ " + viteString);
-            } else {
-                return ".";
-            }
+        if(params.equalsIgnoreCase("life")) {
+
+            String viteString = "" + GourLife.getJsonDataLoader().getPlayerLives((Player) player);
+            return Utils.color("&c❤ " + viteString);
 
         }
 
         if (params.equalsIgnoreCase("revelation")) {
-            int minuti = timer / 60;
-            if(minuti <= 0){
-                return Utils.color("" + timer);
-            } else{
-                String minutiString = "" + minuti;
-                return Utils.color(minutiString);
-            }
+
+            if (!GourLife.getInstance().getConfig().getBoolean("revelation")) return "revelatio-off";
+
+            minutes = RevelationTask.getTime() / 60;
+            String minutesString = minutes + "m";
+            return Utils.color(minutesString);
+
 
         } else {
             return ".";

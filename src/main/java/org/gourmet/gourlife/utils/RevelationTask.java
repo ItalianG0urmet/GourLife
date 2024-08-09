@@ -1,5 +1,6 @@
 package org.gourmet.gourlife.utils;
 
+import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
@@ -10,12 +11,12 @@ import java.io.File;
 
 public class RevelationTask extends BukkitRunnable {
 
-    private int timer = GourLife.getInstance().getTimer();
+    @Getter private static int time = GourLife.getInstance().getTimer();
     private FileConfiguration config = GourLife.getInstance().getConfig();
 
     @Override
     public void run() {
-        if (timer <= 0) {
+        if (time <= 0) {
 
             for(Player p : Bukkit.getOnlinePlayers()){
                 String messages = config.getString("rivelation_message");
@@ -28,11 +29,11 @@ public class RevelationTask extends BukkitRunnable {
                 Utils.sendMessageAll(config.getString("prefix") + messages);
                 Utils.sendTitleAllEX(Utils.color(config.getString("title_rivelation")), Utils.color(config.getString("subtitle_rivelation")), 10, 70, 20, true);
             }
-            timer = config.getInt("timer_rivelation");
+            time = config.getInt("timer_revelation");
 
         }
-        if(timer >= 0){
-            timer--;
+        if(time >= 0){
+            time--;
         }
     }
 }
